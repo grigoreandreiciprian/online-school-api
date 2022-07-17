@@ -3,9 +3,9 @@ import {Sequelize} from "sequelize"
 import bcrypt from "bcrypt"
 export default (sequelize) =>{
 
- class Student extends Sequelize.Model{}
+ class User extends Sequelize.Model{}
 
- Student.init({
+ User.init({
 
 
     id:{
@@ -78,7 +78,7 @@ export default (sequelize) =>{
     },
 
     password:{
-        type:Sequelize.VIRTUAL,
+        type:Sequelize.STRING,
         allowNull:false,
         validate:{
             notNull:{
@@ -90,27 +90,12 @@ export default (sequelize) =>{
                 msg:'Please provide a password'
             },
             len:{
-                args:[8,20],
+                args:[8],
                 msg:'The password should be between 8 and 20 characters in length'
             }
         }
      },
-     confirmedPassword:{
-
-        type:Sequelize.STRING,
-        allowNull:false,
-        set(val){
-            if(val===this.password){
-                const  hashedPassword=bcrypt.hashSync(val,10);
-                this.setDataValue('confirmedPassword',hashedPassword);
-            }
-        },
-        validate:{
-            notNull:{
-                msg:'Both password must match'
-            }
-        }
-    }
+     
 
 },{
     sequelize,
@@ -120,6 +105,6 @@ export default (sequelize) =>{
 
  });
 
-  return Student;
+  return User;
  
 }

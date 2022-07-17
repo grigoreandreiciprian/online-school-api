@@ -1,10 +1,12 @@
 import { Sequelize } from "sequelize";
 
-import Student from "../models/student.js";
+import User from "../models/User.js";
 
 import Course from "../models/course.js";
 
 import Enrolment from "../models/enrolment.js";
+
+import Role from "../models/Role.js";
 
 import dotenv from "dotenv"
 
@@ -27,30 +29,32 @@ const conectDb =  () =>{
             db.sequelize=sequelize;
             db.Sequelize=Sequelize;
             
-            db.models.Student=Student(sequelize);
+            db.models.User=User(sequelize);
 
             db.models.Course=Course(sequelize);
 
             db.models.Enrolment=Enrolment(sequelize);
 
+           db.models.Role= Role(sequelize)
 
-            db.models.Student.hasMany(db.models.Enrolment,{
+
+            db.models.User.hasMany(db.models.Enrolment,{
 
                onDelete:'CASCADE',
-               as:'fk_student_id',
+               as:'fk_User_id',
 
                foreignKey:{
-                   fieldName:'student_id',
+                   fieldName:'User_id',
                    allowNull:false
                }
 
             });
 
-            db.models.Enrolment.belongsTo(db.models.Student,{
-                as:'fk_student_id',
+            db.models.Enrolment.belongsTo(db.models.User,{
+                as:'fk_User_id',
 
                 foreignKey:{
-                    fieldName:"student_id",
+                    fieldName:"User_id",
                     allowNull:false
                 }
             })
@@ -74,6 +78,18 @@ const conectDb =  () =>{
                 }
             })
 
+             
+            db.models.Role.hasOne(db.models.User,{
+                foreignKey:{
+                    fieldName:"role_id",
+                    allowNull:false,
+                }
+            })
+
+
+          
+
+           
             return db
            
 

@@ -29,17 +29,81 @@ export default (sequelize) =>{
         }
     },
 
-    department:{
+    
+
+    createdBy:{
         type:Sequelize.STRING,
         allowNull:false,
 
         validate:{
             notNull:{
-                msg:"Provide a value to Department"
+                msg:"Provide a value to Create"
             },
 
             notEmpty:{
-                msg:"Provide a value to Department" 
+                msg:"Provide a value to create" 
+            }
+        }
+    },
+
+    lectures:{
+        type:Sequelize.INTEGER,
+        allowNull:false,
+
+        validate:{
+            notNull:{
+                msg:"Provide a value to Lectures"
+            },
+
+            notEmpty:{
+                msg:"Provide a value to Lectures" 
+            }
+        }
+    },
+
+
+    
+    hours:{
+        type:Sequelize.INTEGER,
+        allowNull:false,
+
+        validate:{
+            notNull:{
+                msg:"Provide a value to Hours"
+            },
+
+            notEmpty:{
+                msg:"Provide a value to Hours" 
+            }
+        }
+    },
+
+    totalPrice:{
+        type:Sequelize.INTEGER,
+        allowNull:false,
+
+        validate:{
+            notNull:{
+                msg:"Provide a value to Total price"
+            },
+
+            notEmpty:{
+                msg:"Provide a value to Total price" 
+            }
+        }
+    },
+
+    perMonth:{
+        type:Sequelize.INTEGER,
+        allowNull:false,
+
+        validate:{
+            notNull:{
+                msg:"Provide a value to per month"
+            },
+
+            notEmpty:{
+                msg:"Provide a value to pet mounth" 
             }
         }
     },

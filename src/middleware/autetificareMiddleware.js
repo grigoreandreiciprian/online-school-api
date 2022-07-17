@@ -15,7 +15,8 @@ const protect= expressAsyncHandler(async(req,res,next)=>{
 
             const decoded= jwt.verify(token,process.env.JWT_SECRET);
 
-            req.user= await db.models.Student.findByPk(decoded.id)
+
+            req.user= await db.models.User.findByPk(decoded.id)
 
             next();
 

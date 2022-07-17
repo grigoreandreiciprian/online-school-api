@@ -6,9 +6,11 @@ import dotenv from 'dotenv'
 
 import db from './config/db.js'
 
-import Studentrouter from './routes/studentRoute.js'
+import Userrouter from './routes/UserRoute.js'
 
 import courseRouter from "./routes/coursesRoute.js"
+
+import enrolmentRouter from"./routes/enrolmentRoute.js"
 
 dotenv.config();
 
@@ -18,16 +20,29 @@ app.use(express.json());
 
 app.use(cors());
 
-    app.use("/api/v1/students",Studentrouter)
+    app.use("/api/v1/users",Userrouter)
 
-    app.use("/api/v1/update",Studentrouter)
+    app.use("/api/v1/update",Userrouter)
 
-    app.use("/api/v1/add",Studentrouter)
+    app.use("/api/v1/add",Userrouter)
+
+    app.use("/api/v1/log",Userrouter)
 
 
     app.use("/api/v1/courses",courseRouter)
 
     app.use('/api/v1/courses',courseRouter)
+
+    app.use('/api/v1/corses',courseRouter)
+
+    app.use('/api/v1/courses',courseRouter)
+
+
+    app.use('/api/v1/enrolment', enrolmentRouter)
+
+    app.use('/api/v1/enrolment',enrolmentRouter)
+
+    app.use('/api/v1/enrolment',enrolmentRouter)
 
 db.sequelize.sync().then((()=>{
 
