@@ -12,6 +12,8 @@ import courseRouter from "./routes/coursesRoute.js"
 
 import enrolmentRouter from"./routes/enrolmentRoute.js"
 
+import path from 'path'
+
 dotenv.config();
 
 let app=express();
@@ -43,6 +45,17 @@ app.use(cors());
     app.use('/api/v1/enrolment',enrolmentRouter)
 
     app.use('/api/v1/enrolment',enrolmentRouter)
+
+    const dirname= path.resolve();
+
+    app.use(express.static(path.join(dirname, '/client/build')))
+
+    app.get('*', (req,res)=>{
+        res.sendFile(path.resolve(dirname, 'client', 'build', 'index.html'))
+    })
+
+
+
 
 db.sequelize.sync().then((()=>{
 

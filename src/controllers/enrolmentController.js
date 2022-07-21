@@ -20,11 +20,9 @@ const addEnrolment= asyncHandler((async(req,res)=>{
     let enrolment= req.body
      
    
-    const users= await sequelize.query("SELECT * from Users" , {type: QueryTypes.SELECT})
+  
 
-    console.log(users)
-
-    //  await db.models.Enrolment.create(enrolment)
+     await db.models.Enrolment.create(enrolment)
 
      res.status(204).end()
 }))
