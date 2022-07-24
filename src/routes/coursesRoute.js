@@ -1,10 +1,10 @@
 
 import express from "express";
 
-import { getAll,addCourse, deleteCourse, updateCourse } from "../controllers/coursesController.js";
-import protect from "../middleware/autetificareMiddleware.js";
+import { getAll,addCourse, deleteCourse, updateCourse } from "./../coursesController";
+import protect from "./../autetificareMiddleware.js";
 
-import errorHandler from "../middleware/errorMiddleware.js"
+import errorHandler from "./../errorMiddleware.js"
 
 
 

@@ -2,10 +2,10 @@
 
 import asyncHandler from "express-async-handler";
 
-import db from "../config/db.js";
-import User from "../models/User.js";
+import db from "./../config/db"
+import User from "./../models/User.js";
 
-import generateToken from "../utils/utilities.js";
+import generateToken from "./../utilities.js";
 
 import bcrypt from "bcrypt"
 

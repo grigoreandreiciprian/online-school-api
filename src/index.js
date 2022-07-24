@@ -4,13 +4,13 @@ import cors from 'cors'
 
 import dotenv from 'dotenv'
 
-import db from './config/db.js'
+import db from './db.js'
 
-import Userrouter from './routes/userRoute.js'
+import Userrouter from './userRoute.js'
 
-import courseRouter from "./routes/coursesRoute.js"
+import courseRouter from "./coursesRoute.js"
 
-import enrolmentRouter from"./routes/enrolmentRoute.js"
+import enrolmentRouter from"./enrolmentRoute.js"
 
 import path from 'path'
 

@@ -2,7 +2,7 @@
 import asyncHandler  from "express-async-handler"
 import sequelize from "sequelize"
 import {QueryTypes} from "sequelize"
-import db from "../config/db.js"
+import db from "./../config/db"
 
 
  

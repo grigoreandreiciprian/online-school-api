@@ -1,7 +1,7 @@
 import asyncHandler from "express-async-handler";
 
 
-import db from "../config/db.js";
+import db from "./../config/db"
 
 
 
