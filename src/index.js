@@ -6,7 +6,7 @@ import dotenv from 'dotenv'
 
 import db from './config/db.js'
 
-import Userrouter from './routes/UserRoute.js'
+import Userrouter from './routes/userRoute.js'
 
 import courseRouter from "./routes/coursesRoute.js"
 
