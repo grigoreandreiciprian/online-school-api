@@ -8,7 +8,7 @@ import db from "./config/db.js"
 
 import userRouter from './routes/userRoute.js'
 
-import courseRouter from "./routes/coursesRoute.js"
+import courses from "./routes/coursesRoute.js"
 
 import enrolmentRouter from"./routes/enrolmentRoute.js"
 
@@ -22,10 +22,9 @@ app.use(express.json());
 
 app.use(cors());
 
-    app.use("/api/v1/users",userRouter)
-
-    app.use("api/v1/courses",courseRouter)
-    app.use('/api/v1/enrolment',enrolmentRouter)
+    app.use("/api/v1/users",userRouter);
+    app.use('/api/v1/courses',courses);
+    app.use('/api/v1/enrolment',enrolmentRouter);
 
     const dirname= path.resolve();
 

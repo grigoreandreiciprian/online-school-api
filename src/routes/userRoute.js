@@ -1,7 +1,7 @@
 
 import express from "express";
 
-import {getAll, addUser,updateUser,logIn} from "./../controllers/userController.js"
+import {getAll, addUser,updateUser,logIn} from "../controllers/userController.js"
 
 import errorHandler from "./../middleware/errorMiddleware.js"
 

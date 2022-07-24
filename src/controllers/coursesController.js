@@ -12,7 +12,9 @@ import db from "./../config/db.js"
 const getAll= asyncHandler((async(req,res)=>{
 
    
-    let courses= await db.models.Course.findAll()
+    let courses= await db.models.Course.findAll();
+
+    console.log(courses);
 
     res.status(200).json(courses)
 }))
