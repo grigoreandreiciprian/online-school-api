@@ -1,10 +1,10 @@
 
 import express from"express"
 
-import {addEnrolment, getEnrolments, deleteEnrolment} from "./../controllers/enrolmentController"
+import {addEnrolment, getEnrolments, deleteEnrolment} from "./../controllers/enrolmentController.js"
 
 
-// import errorHandler from "../middleware/errorMiddleware"
+import errorHandler from "../middleware/errorMiddleware.js"
 
 
 let enrolmentRouter= express.Router()

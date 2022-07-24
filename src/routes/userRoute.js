@@ -1,11 +1,11 @@
 
 import express from "express";
 
-import {getAll, addUser,updateUser,logIn} from "./../controllers/userController"
+import {getAll, addUser,updateUser,logIn} from "./../controllers/userController.js"
 
-import errorHandler from "./../errorMiddleware.js"
+import errorHandler from "./../middleware/errorMiddleware.js"
 
-import protect from "./../autetificareMiddleware.js"
+import protect from "./../middleware/autetificareMiddleware.js"
 
 
 let Userrouter= express.Router()

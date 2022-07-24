@@ -4,13 +4,13 @@ import cors from 'cors'
 
 import dotenv from 'dotenv'
 
-import db from './db.js'
+import db from "./config/db.js"
 
-import Userrouter from './userRoute.js'
+import userRouter from './routes/userRoute.js'
 
-import courseRouter from "./coursesRoute.js"
+import courseRouter from "./routes/coursesRoute.js"
 
-import enrolmentRouter from"./enrolmentRoute.js"
+import enrolmentRouter from"./routes/enrolmentRoute.js"
 
 import path from 'path'
 
@@ -22,28 +22,9 @@ app.use(express.json());
 
 app.use(cors());
 
-    app.use("/api/v1/users",Userrouter)
+    app.use("/api/v1/users",userRouter)
 
-    app.use("/api/v1/update",Userrouter)
-
-    app.use("/api/v1/add",Userrouter)
-
-    app.use("/api/v1/log",Userrouter)
-
-
-    app.use("/api/v1/courses",courseRouter)
-
-    app.use('/api/v1/courses',courseRouter)
-
-    app.use('/api/v1/corses',courseRouter)
-
-    app.use('/api/v1/courses',courseRouter)
-
-
-    app.use('/api/v1/enrolment', enrolmentRouter)
-
-    app.use('/api/v1/enrolment',enrolmentRouter)
-
+    app.use("api/v1/courses",courseRouter)
     app.use('/api/v1/enrolment',enrolmentRouter)
 
     const dirname= path.resolve();
