@@ -14,7 +14,7 @@ let Userrouter= express.Router()
 
 
 
-Userrouter.route("/").get(protect,getAll,errorHandler)
+Userrouter.route("/").get(getAll,errorHandler)
 
 Userrouter.route("/").post(addUser,errorHandler)
 

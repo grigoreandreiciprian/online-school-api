@@ -39,7 +39,7 @@ app.use(cors());
 
 db.sequelize.sync().then((()=>{
 
-    app.listen(process.env.PORT || 3011, async()=>{
+    app.listen(process.env.PORT || 5000, async()=>{
         console.log("Express server is listening on port 5000!");
     });
 }))
