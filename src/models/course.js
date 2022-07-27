@@ -107,6 +107,58 @@ export default (sequelize) =>{
             }
         }
     },
+
+    minEffort:{
+        type:Sequelize.INTEGER,
+        allowNull:false,
+
+        validate:{
+            notNull:{
+                msg:"Provide a value to min effort"
+            },
+
+            notEmpty:{
+                msg:"Provide a value to min effort" 
+            }
+        }
+    },
+
+   maxEffort:{
+        type:Sequelize.INTEGER,
+        allowNull:false,
+
+        validate:{
+            notNull:{
+                msg:"Provide a value to max effort"
+            },
+
+            notEmpty:{
+                msg:"Provide a value to max effort" 
+            }
+        }
+    },
+
+    category:{
+        type:Sequelize.STRING,
+        allowNull:false,
+
+        validate:{
+            notNull:{
+                msg:"Provide a value to category"
+            },
+
+            notEmpty:{
+                msg:"Provide a value to category" 
+            }
+        }
+    },
+
+
+
+
+
+
+    
 },{
 
     sequelize,

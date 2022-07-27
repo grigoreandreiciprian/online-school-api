@@ -37,7 +37,8 @@ const addUser= asyncHandler((async(req,res)=>{
             age:req.body.age,
             email:req.body.email,
             password:hashedPassword,
-            role_id:req.body.role_id
+            role_id:req.body.role_id,
+            profilePicture:""
         }
 
 

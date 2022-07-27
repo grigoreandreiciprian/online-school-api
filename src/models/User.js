@@ -77,6 +77,11 @@ export default (sequelize) =>{
         }
     },
 
+    profilePicture:{
+        type:Sequelize.STRING,
+        allowNull:true,
+    },
+
     password:{
         type:Sequelize.STRING,
         allowNull:false,
