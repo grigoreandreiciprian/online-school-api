@@ -102,5 +102,21 @@ const logIn= asyncHandler((async(req,res)=>{
     }
 }))
 
+const deleteUser= asyncHandler((async(req,res)=>{
+    let {id}= req.params
 
-export {getAll, addUser, updateUser, logIn}
+    let user= await db.models.User.findByPk(id)
+
+    if(user){
+      
+        await user.destroy()          
+    }
+
+    res.status(204).end();
+}))
+
+
+
+
+
+export {getAll, addUser, updateUser, logIn, deleteUser}
